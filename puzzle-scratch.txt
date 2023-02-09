@@ -1,0 +1,50 @@
+λ
+
+Level 1
+@.o._
+_.o..
+
+minified: @.o._ _.o..
+
+Level 2
+..o_
+@XoX
+oX_X
+_...
+minified: ..o_ @XoX oX_X _...
+
+Level 3
+X._..
+@oooo
+X..._
+
+minified: X._.. @oooo X..._
+
+Level 4
+.@..._
+.o_o..
+.o_.o_
+
+minified: .@..._ .o_o.. .o_.o_
+
+Level 5
+
+.@.o_
+oX...
+.XXXX
+_..@.
+_o.o_
+
+minified: .@.o_ oX... .XXXX _..@. _o.o_
+
+
+Level end
+
+oλooo....
+ooλoo....
+ooλλ_____
+oλooλ____
+λooooλ...
+.........
+
+minified: oλooo.... ooλoo.... ooλλ_____ oλooλ____ λooooλ... .........
