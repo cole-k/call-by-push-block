@@ -1,4 +1,4 @@
-x="Move:[hjkl] Reset:[x]\nL1\nλ.o._ _.o.\nL2\nλ.o_ oXoX _X_X\nL3\nX._.. λoooo X"
+x="Move:[hjkl] Redo:[x]\nL1\nλ.o._ _.o..\nL2\nλ.o_ oXoX _X_X\nL3\nX._.. λoooo X"
 y="..._\nL4\n.λ..._ .o_o.. .o_.o_\nL5\n.λ.o_ XXXXX _oλ..\nL6\n.λ.o_ oX... .XXXX"
 z=" _..λ. _o.o_\nL7\n._.o.. ._.o.X .o_.λ. .o_XXX ....o_ .λX.o_\nL8\noλooo.... o"
 main=g.o((,)<*>id<$>words).lines$x%y%z%b;t=foldr(zipWith(:))e;p=putStrLn;k="λ."
