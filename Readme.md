@@ -18,7 +18,7 @@ and its category)
 $ runghc call-by-push-block-more-playable.hs
 ```
 
-See the (Running)[#Running] section for more details.
+See the [Running section](#running) for more details.
 
 ## The cast
   - `λ`: The player character.
