@@ -16,7 +16,7 @@ import GHC.Unicode (isPrint)
 import Debug.Trace (trace)
 
 encodingChars :: [Char]
-encodingChars = "λ._oOX \n"
+encodingChars = "λ_.o+# \n"
 
 encodeChar :: [Char] -> Char -> Maybe Int
 encodeChar encodingChars c = elemIndex c encodingChars
