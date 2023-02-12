@@ -1,6 +1,8 @@
 "Call-by-push-block"
 λ
 
+char set: λ_.o+# \n
+
 Level 1
 λ.o._
 _.o..
@@ -9,17 +11,17 @@ minified: λ.o._ _.o..
 
 Level 2
 λ.o_
-oXoX
-_X_X
+o#o#
+_#_#
 
-minified: λ.o_ oXoX _X_X
+minified: λ.o_ o#o# _#_#
 
 Level 3
-X._..
+#._..
 λoooo
-X..._
+#..._
 
-minified: X._.. λoooo X..._
+minified: #._.. λoooo #..._
 
 Level 4
 .λ..._
@@ -30,31 +32,31 @@ minified: .λ..._ .o_o.. .o_.o_
 
 Level 5
 .λ.o_
-XXXXX
+#####
 _oλ..
 
-minified: .λ.o_ XXXXX _oλ..
+minified: .λ.o_ ##### _oλ..
 
 Level 6
 
 .λ.o_
-oX...
-.XXXX
+o#...
+.####
 _..λ.
 _o.o_
 
-minified: .λ.o_ oX... .XXXX _..λ. _o.o_
+minified: .λ.o_ o#... .#### _..λ. _o.o_
 
 Level 7
 
 ._.o..
-._.o.X
+._.o.#
 .o_.λ.
-.o_XXX
+.o_###
 ....o_
-.λX.o_
+.λ#.o_
 
-minified: ._.o.. ._.o.X .o_.λ. .o_XXX ....o_ .λX.o_
+minified: ._.o.. ._.o.# .o_.λ. .o_### ....o_ .λ#.o_
 
 Level 8
 
@@ -67,34 +69,17 @@ oλooλ____
 
 minified: oλooo.... ooλoo.... ooλλ_____ oλooλ____ λooooλ... .........
 
-L9
-......
-...λ..
-......
+Level 9
 
-All levels minified
+λoo+_
 
-Move:[hjkl] Reset:[x]\n
-L1\n
-λ.o._ _.o.\n
-L2\n
-λ.o_ oXoX _X_X\n
-L3\n
-X._.. λoooo X..._\n
-L4\n
-.λ..._ .o_o.. .o_.o_\n
-L5\n
-.λ.o_ XXXXX _oλ..\n
-L6\n
-.λ.o_ oX... .XXXX _..λ. _o.o_\n
-L7\n
-._.o.. ._.o.X .o_.λ. .o_XXX ....o_ .λX.o_\n
-L8\n
-oλooo.... ooλoo.... ooλλ_____ oλooλ____ λooooλ... .........
+Level 10
 
-Move:[hjkl] Reset:[x]\nL1\nλ.o._ _.o.\nL2\nλ.o_ oXoX _X_X\nL3\nX._.. λoooo X..._\nL4\n.λ..._ .o_o.. .o_.o_\nL5\n.λ.o_ XXXXX _oλ..\nL6\n.λ.o_ oX... .XXXX _..λ. _o.o_\nL7\n._.o.. ._.o.X .o_.λ. .o_XXX ....o_ .λX.o_\nL8\noλooo.... ooλoo.... ooλλ_____ oλooλ____ λooooλ... .........
+λoλ+_
 
-x="Move:[hjkl] Reset:[x]\nL1\nλ.o._ _.o.\nL2\nλ.o_ oXoX _X_X\nL3\nX._.. λoooo X"
-y="..._\nL4\n.λ..._ .o_o.. .o_.o_\nL5\n.λ.o_ XXXXX _oλ..\nL6\n.λ.o_ oX... .XXXX"
-z=" _..λ. _o.o_\nL7\n._.o.. ._.o.X .o_.λ. .o_XXX ....o_ .λX.o_\nL8\noλooo.... o"
-b="oλoo.... ooλλ_____ oλooλ____ λooooλ... ........."
+Level 11
+##.....
+λλoo++_
+##.....
+
+minified: ##..... λλoo++_ XX.....
