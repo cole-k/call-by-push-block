@@ -1,9 +1,11 @@
 import System.IO (stdin, hSetBuffering, BufferMode(..))
 -- x="ᓐ⚎㐺㫱᩵ᕽ㆒峛犒⒂ᚱⲓᚋ㐗孱㎭⺐拐⒫孖⑵㎐⹚ⓑ㑖㖪搑婚⒵ⱚᚨ㘟⒓ޞ⒛۲ቈヱቃ㘱␛⒲⒒翺"
-x="λoo+_\nλoλ+_\n##..... λλoo++_ ##....."
+x="oλooo.... ooλoo.... ooλλ_____ oλooλ____ λooooλ... .........\nλoo+_\nλoλ+_\n##..... λλoo++_ XX.....\n"
+y="#.#.####### .λ.λ.###### .#.#.###### .....++++o_ #.#.####### .....###### .λλλ.######\n"
+z="...._.... ..._+.... ..#_+.... .#λ#+###. .#oooooλ# .#o#λ#o#. .#o###o#. #λoooo.#. .#####λ#. ......#.."
 main=do
   hSetBuffering stdin NoBuffering
-  g 1.o((,)<*>id<$>words).lines$x --o c x>>=o(i!!).n 5.l
+  g 1.o((,)<*>id<$>words).lines$x%y%z --o c x>>=o(i!!).n 5.l
 t=foldr(zipWith(:))e
 d=getChar;g k[]=p"🎉";g k((s,_):v)|all('_'`notElem`)s=k!s*>p"⮑ ️"*>d*>g(k+1)v
 g k(w@(s,u):v)=k!s*>p b*>d>>=(\i->g k$(i?([id,t,t.r,id,o r]!!i)$w,u):v).q.pure
