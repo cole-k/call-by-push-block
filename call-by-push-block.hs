@@ -1,6 +1,6 @@
 import System.IO (stdin, hSetBuffering, BufferMode(..))
 -- x="ᓐ⚎㐺㫱᩵ᕽ㆒峛犒⒂ᚱⲓᚋ㐗孱㎭⺐拐⒫孖⑵㎐⹚ⓑ㑖㖪搑婚⒵ⱚᚨ㘟⒓ޞ⒛۲ቈヱቃ㘱␛⒲⒒翺"
-x="oλooo.... ooλoo.... ooλλ_____ oλooλ____ λooooλ... .........\nλoo+_\nλoλ+_\n##..... λλoo++_ XX.....\n"
+x="oλooo.... ooλoo.... ooλλ_____ oλooλ____ λooooλ... .........\nλoo+_\nλoλ+_\n##..... λλoo++_ ##.....\n"
 y="#.#.####### .λ.λ.###### .#.#.###### .....++++o_ #.#.####### .....###### .λλλ.######\n"
 z="...._.... ..._+.... ..#_+.... .#λ#+###. .#oooooλ# .#o#λ#o#. .#o###o#. #λoooo.#. .#####λ#. ......#.."
 main=do
@@ -12,7 +12,7 @@ g k(w@(s,u):v)=k!s*>p b*>d>>=(\i->g k$(i?([id,t,t.r,id,o r]!!i)$w,u):v).q.pure
 m('λ':c:d)|(a,b)<-span(>'n')$c:d=r(n 1 b#r a)%m(drop 1 b)
 m"λ"=".";m(c:r)=c:m r;m l=l;i?f|i<1=snd|0<3=(i&f).o m.f.fst;2&f=r.t;_&f=f
 q(x:_)=c x`mod`5;q _=0;r=reverse;e=[]:e;k!x=p"\^[cLevel "*>print k*>p(unlines x)
-""#(_:r)=r%k;"."#r=r%k;"+"#(_:r)='.':r%k;"+"#_="..";"_"#('o':r)='#':r%k;x#l=x%l%"λ"
+""#(_:r)=r%k;"."#r=r%k;"+"#(_:r)='.':r%k;"+"#_="..";"_"#('o':r)='O':r%k;x#l=x%l%"λ"
 k="λ.";i="λ_.o+# \n";n=take;c=fromEnum;l n=mod n 8:l(n`div`8);p=putStr;o=map;(%)=(++)
 b="Move [hjkl] Reset [x]\n"
 -- ^10 ------------------------------------------------------------------ 80> --
