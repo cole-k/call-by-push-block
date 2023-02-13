@@ -106,7 +106,7 @@ tryEncode n encodingChars validSet charsToEncode = ((n, encodingChars, map toEnu
 
 findEncoding :: Int -> Set Int -> [Char] -> [((Int, [Char], [Char]), [Int])]
 findEncoding n validChars chars
-  = take 10 . sortOn (length . snd) $ map (\ecs -> tryEncode n ecs validChars chars) (permutations encodingChars)
+  = takeWhile (\(_, missing) -> null missing) . sortOn (length . snd) $ map (\ecs -> tryEncode n ecs validChars chars) (permutations encodingChars)
   -- where
     -- sortedCharList = sort charList
     -- diffTrie = createDiffTrie (length chars - 1) (diffs sortedCharList)
