@@ -2,7 +2,7 @@ module Encode where
 
 import Data.ByteString (ByteString)
 import qualified Data.ByteString as B
-import Data.List (elemIndex, nub, permutations, sortOn, sort, tails)
+import Data.List (elemIndex, nub, permutations, sortOn, sort, tails, maximumBy)
 import Data.Maybe (fromJust)
 import Data.Set (Set)
 import qualified Data.Set as S
@@ -45,6 +45,9 @@ encodeInChunksOf n encodingChars = map fromBase8 . chunksOf n . map encode
 readCharacterList :: String -> IO (Set Int)
 readCharacterList filename = S.fromList . map read . lines <$> readFile filename
 
+printableUnicodes :: [Char]
+printableUnicodes = [c | c <- toEnum <$> [1..2^20], isPrint c]
+
 firstJust :: [Maybe a] -> Maybe a
 firstJust [] = Nothing
 firstJust (Just a:_) = Just a
@@ -74,6 +77,15 @@ firstJust (Nothing:rest) = firstJust rest
 --     firstDiff = head diffs
 --     diffs = zipWith (-) sortedCharList encodedChars
 
+compressToRange :: [Int] -> [(Int, Int)]
+compressToRange []  = []
+compressToRange (x:rest) = go x x rest
+  where
+    go start prev [] = [(start, prev)]
+    go start prev (curr:rest)
+      | curr - prev == 1 = go start curr rest
+      | otherwise        = (start, prev) : compressToRange (curr:rest)
+
 diffs :: [Int] -> [Int]
 diffs [] = []
 diffs [_] = []
@@ -92,27 +104,69 @@ diffsToByteString = foldMap intToByteString
 
 createDiffTrie :: Int -> [Int] -> Trie ()
 createDiffTrie maxLength [] = T.empty
-createDiffTrie maxLength diffs@(_:rest) = T.insert diffByteString () (createDiffTrie maxLength rest)
+createDiffTrie maxLength diffs@(_:rest) = go diffs T.empty
   where
-    diffByteString = diffsToByteString $ take maxLength diffs
+    go [] dt = dt
+    go diffs@(_:rest) dt = go rest (T.insert (diffsToByteString $ take maxLength diffs) () dt)
 
-tryEncode :: Int -> [Char] -> Set Int -> [Char] -> ((Int, [Char], [Char]), [Int])
-tryEncode n encodingChars validSet charsToEncode = ((n, encodingChars, map toEnum encoding), missingNums)
+tryEncodeDiffTree :: Int -> [Char] -> Trie () -> [Char] -> Maybe (Int, [Char], [Char], Int)
+tryEncodeDiffTree n encodingChars diffTrie charsToEncode =
+  if isValid
+     then do
+       (k, newEncoding) <- findNaiveOffset encoding
+       Just (n, encodingChars, newEncoding, k)
+     else
+       Nothing
   where
     encoding = encodeInChunksOf n encodingChars charsToEncode
-    -- uniqueCodes = nub . sort $ encoding
-    -- diffByteString = diffsToByteString (diffs uniqueCodes)
+    uniqueCodes = S.toList . S.fromList $ encoding
+    diffByteString = diffsToByteString (diffs uniqueCodes)
+    isValid = not . T.null $ T.submap diffByteString diffTrie
+
+findNaiveOffset :: [Int] -> Maybe (Int, [Char])
+findNaiveOffset codes@(_:_)
+  = firstJust [Just (k, newEncoding)| k<-[-minC..2^20]
+                , let newEncoding = [toEnum $ code + k | code<-codes]
+                , all isPrint newEncoding]
+    where
+      minC = minimum codes
+findNaiveOffset [] = Nothing
+
+-- findNaiveOffset :: [Int] -> (Int, Int, [Char])
+-- findNaiveOffset codes@(_:_)
+--   = maximumBy (\(x, _, _) (y, _, _) -> compare x y) [(numMissing, k, newEncoding)| k<-[-minC..(2^20) - maxC]
+--                 , let newEncoding = [toEnum $ code + k | code<-codes]
+--                 , let numMissing = length . filter isPrint $ newEncoding]
+--     where
+--       minC = minimum codes
+--       maxC = maximum codes
+
+findEncodingDiffTree :: Int -> [Char] -> Maybe (Int, [Char], [Char], Int)
+findEncodingDiffTree n chars
+  = firstJust $ map (\ecs -> tryEncodeDiffTree n ecs diffTrie chars) (permutations encodingChars)
+  where
+    diffTrie = createDiffTrie (1 + (length chars `div` n)) (diffs $ map fromEnum printableUnicodes)
+
+tryEncodeNaive :: Int -> [Char] -> [Char] -> ((Int, [Char], [Char]), [Int])
+tryEncodeNaive n encodingChars charsToEncode = ((n, encodingChars, map toEnum encoding), missingNums)
+  where
+    encoding = encodeInChunksOf n encodingChars charsToEncode
     missingNums = filter (not . isPrint . toEnum) encoding
 
-findEncoding :: Int -> Set Int -> [Char] -> [((Int, [Char], [Char]), [Int])]
-findEncoding n validChars chars
-  = takeWhile (\(_, missing) -> null missing) . sortOn (length . snd) $ map (\ecs -> tryEncode n ecs validChars chars) (permutations encodingChars)
-  -- where
-    -- sortedCharList = sort charList
-    -- diffTrie = createDiffTrie (length chars - 1) (diffs sortedCharList)
+data OutputType
+  = NoMissing
+  | First Int
+  deriving (Eq, Show)
 
-printEncoding :: ((Int, [Char], [Char]), [Int]) -> IO ()
-printEncoding ((_n, encodingChars, encoded), missingNums) = do
+findEncodingNaive :: Int -> [Char] -> OutputType -> [((Int, [Char], [Char]), [Int])]
+findEncodingNaive n chars outputType
+  = selector outputType . sortOn (length . snd) $ map (\ecs -> tryEncodeNaive n ecs chars) (permutations encodingChars)
+  where
+    selector NoMissing = takeWhile (\(_, missing) -> null missing)
+    selector (First n) = take n
+
+printEncodingNaive :: ((Int, [Char], [Char]), [Int]) -> IO ()
+printEncodingNaive ((_n, encodingChars, encoded), missingNums) = do
   putStr "Encoding set: "
   print encodingChars
   putStr "Encoded message length: "
@@ -122,10 +176,22 @@ printEncoding ((_n, encodingChars, encoded), missingNums) = do
   putStr "Missing nums: "
   print missingNums
 
+printEncodingDiffTree :: Maybe (Int, [Char], [Char], Int) -> IO ()
+printEncodingDiffTree Nothing = putStrLn "No encoding found"
+printEncodingDiffTree (Just (_n, encodingChars, encoded, k)) = do
+  putStr "Encoding set: "
+  print encodingChars
+  putStr "Offset: "
+  print k
+  putStr "Encoded message length: "
+  print (length encoded)
+  putStr "Encoded message: "
+  putStrLn encoded
+
 main :: IO ()
 main = do
   nStr:file:_ <- getArgs
   let n = read nStr
   chars <- readFile file
-  validChars <- readCharacterList "ghc-unicode-chars.txt"
-  mapM_ printEncoding $ findEncoding n validChars chars
+  -- validChars <- readCharacterList "ghc-unicode-chars.txt"
+  printEncodingDiffTree $ findEncodingDiffTree n chars
