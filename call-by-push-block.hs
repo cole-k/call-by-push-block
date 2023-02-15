@@ -4,12 +4,12 @@ main=do
      hSetBuffering stdin NoBuffering
      print=<<(mapM g.zip[1..].o(pure.words).lines)(o(i!!).n 5.w=<<o c(x%y))
 o=map
-t=foldr(zipWith(:))v;e=drop 1;g(k,x)|all(notElem '⛳')$head x=l x<$k!x<*p"⮑  "<*d
+t=foldr(zipWith(:))v;e=drop 1;g(k,x)|all(notElem '_')$head x=l x<$k!x<*p"⮑  "<*d
 g(k,x)=do{k!x;p b;i<-q.pure<$>d;g(k,i?([t.r,t,id,t,t,t,o r]!!i)$x)};c=fromEnum;k="λ."
 m('λ':c:d)|(a,b)<-span(>'n')$c:d=r(n 1 b#r a)%m(e b);m"λ"=".";m(c:r)=c:m r;m l=l
 (1?f)x=z x;(5?f)x=e x%z x%z x;(4?f)_=[[]];(i?f)x=((i&f).o m.f.head$x):x;0&f=r.t;_&f=f;n=take
-p=putStr;""#(_:r)=r%k;"."#r=r%k;"+"#(_:r)='.':r%k;"+"#_="..";"⛳"#('o':r)='O':r%k
-x#l=x%l%"λ";k!x@(s:_)=p"\^[cL"*>a k*>a(l x)*>p(unlines s);i="o+⛳#.λ \n";l=length
+p=putStr;""#(_:r)=r%k;"."#r=r%k;"+"#(_:r)='.':r%k;"+"#_="..";"_"#('o':r)='O':r%k
+x#l=x%l%"λ";k!x@(s:_)=p"\^[cL"*>a k*>a(l x)*>p(unlines s);i="o+_#.λ \n";l=length
 q(x:_)=c x`mod`7;q _=0;d=getChar;v=[]:v;z=n 1.r;r=reverse;b="λ:wasd 🔄:x 🔙:u\n"
 a=print;(%)=(++);w n=n`mod`8:w(n`div`8);y="㛛䛣䤳㤤㴤䥤䥣䤧䤢⤦䤡✦䤡㫦䛙æ㨀ユ䘝ユ䘛Ş䜀㛦䝛䤦䣤ᤧ䤊䡦䌡䤦䤤ܞ㣃䬦䥤㣦䜜ᄞ㠊䤞㤤翿"
 -- ^10 ------------------------------------------------------------------ 80> --
