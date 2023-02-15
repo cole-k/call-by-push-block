@@ -194,4 +194,4 @@ main = do
   let n = read nStr
   chars <- readFile file
   -- validChars <- readCharacterList "ghc-unicode-chars.txt"
-  printEncodingDiffTree $ findEncodingDiffTree n chars
+  mapM_ printEncodingNaive $ findEncodingNaive n chars NoMissing
