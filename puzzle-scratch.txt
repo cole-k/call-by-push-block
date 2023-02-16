@@ -2,16 +2,6 @@
 char set: λ_.o+# \n
 additional chars: O
 
-Ideas:
-
-- use repeat instead of ((,)<*>id<$>words), requires changing (?) to work on
-  arrays. best I can think of for general case is i?f=(:).(i&f).o m.f.head<*>id
-  which ends up being longer. However, this would allow us to support undoing an
-  arbitrary number of moves which might be nice. Or it might be cumbersome. If
-  I can think of a way to support 6 keys, maybe it would be worth supporting
-  both undo and reset and leaving undo as a crutch meant to be using sparingly.
-  Reset could then be defined as drop 100.
-
 Level 1
 λ.o._
 _.o..
