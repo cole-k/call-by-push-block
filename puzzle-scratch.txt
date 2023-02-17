@@ -2,6 +2,16 @@
 char set: λ_.o+# \n
 additional chars: O
 
+remaining characters: 0
+  - +9 (without alts)
+  - +10 (level 14 alt)
+(fits level 1 and level 2 alt)
+  - -13 (replace level 7 with level 7 alt)
+  - -3 (replace level 2 with level 2 alt)
+  - Not sure the below is a good idea
+  - +1 (combine levels 9 and 10)
+  - -4 (add spaces in the middle of levels 9 and 10 combined)
+
 Level 1
 λ.o._
 _.o..
@@ -76,6 +86,13 @@ Level 10
 
 λoλ+_
 
+Level 9-10 combined
+
+λoo.+_
+λoλ.+_
+
+minified: λoo.+_ λoλ.+_
+
 Level 11
 ##.....
 λλoo++_
@@ -133,8 +150,8 @@ Level 14
 minified: ...._.... ..._+.... ..#_+.... .#λ#+###. .#oooooλ# .#o#λ#o#. .#o###o#. #λoooo.#. .#####λ#. ......#..
 
 Level 14 Alt
-..._+....
-..#_+._..
+.._..._..
+.._.+._..
 .#λ#+###.
 .#oooooλ#
 .#o#λ#o#.
@@ -143,7 +160,22 @@ Level 14 Alt
 .#####λ#.
 ......#..
 
-minified: ..._+.... ..#_+._.. .#λ#+###. .#oooooλ# .#o#λ#o#. .#o###o#. #λoooo.#. .#####λ#. ......#..
+minified: .._..._.. .._.+._.. .#λ#+###. .#oooooλ_ .#o#λ#o#. .#o###o#. _λoooo.#. .#####λ#. ......_..
+
+Level 14 Harder
+..._____.
+.._.+..._
+..#.+..._
+.#λ#+###.
+.#oooooλ#
+.#o#λ#o#.
+.#o###o#.
+#λoooo.#.
+.#####λ#.
+......#..
+
+minified: ..._____. .._.+..._ ..#.+..._ .#λ#+###. .#oooooλ# .#o#λ#o#. .#o###o#. #λoooo.#. .#####λ#. ......#..
+
 
 Level 15
 ...+_+...
@@ -154,6 +186,7 @@ Level 15
 .#.#.#.#.
 #.o+_+o.#
 #.......#
+
 minified: ...+_+... .+..+..+. ......... #.#o#o#.# ..λ...λ.. .#.#.#.#. #.o+_+o.# #.......#
 
 Level ?
@@ -180,14 +213,47 @@ Level ?
 
 minified: ++λ+__o.λ +..+o+#.. ..oooooo. ._o....#_
 
+Level 7 Alt
 
-Alt Level 1
+...#..λ
+..o_.o.
+..λ#...
+#_###_#
+.λ.#..λ
+.o._o..
+...#...
+
+minified: ...#..λ ..o_.o. ..λ#... #_###_# .λ.#..λ .o._o.. ...#...
+
+Level 7 Alt Old
+.λ.#..λ
+..o_...
+...#.o.
+#_###_#
+.λ.#...
+.o._o.λ
+...#...
+
+solution: LDDDRUR
+minified: .λ.#..λ ..o_... ...#.o. #_###_# .λ.#... .o._o.λ ...#...
+
+-- ...#..λ .o._.o. .λ.#... #_###_# ..λ#..λ .o._o.. ...#...
+
+Level 1 Alt
 #######
 #λ.o._#
 #_.o..#
 #######
 
-Alt Level 2
+Level 1 Alt 2
+.......
+.λ.o._.
+._.o...
+.......
+
+Level 2 Alt
 ...#_
 .#.#o
 λ#...
+
+minified: ...#_ .#.#o λ#...
