@@ -1,5 +1,5 @@
 import System.IO
-x="杘㫲㛋䚴գᛜ㞜孂㜕ٳⳛ㮫櫓㎫ⵘ䤤ㅲニ䪵㓛⤤マ坲㛎⃜㵛㚝㛠䦢㔴㜘㫐⛮㣛ਜ਼㝭媛㝨媛涀શ氭傶ㅭ㚛㛛偛ⷝ瘨㤎⛛筀䢷㛛㣡ⶤッ㕬䜜㚿㛛䜓缣㛚⭣〃㎴㛜㛛䛚㛛ڛ㛣⛛䤤䣤"
+x="杙㫲㛃䚴ᕣۜ㞜孊㜕ᘳⳛ㮫櫓ㆫⵙ䤤㍲㋃䪵㓛⤤㋞坲㛆⋜㵛㚝㛡䦢㔴㜙㫑⛮㣛ᨛ㝭媛㝩媛涉᪶汭劶㍭㚛㛛创ⷝ癩㤆⛛等䢷㛛㣠ⶤ㋋㕬䜜㚿㛛䜓缣㛚⭣㉋ㆴ㛜㛛䛚㛛᚛㛣⛛䤤䣤"
 main=do
      hSetBuffering stdin NoBuffering
      print=<<(mapM g.zip[1..].o(pure.words).lines$o(i!!).n 5.w=<<o c(x%y))
@@ -11,8 +11,8 @@ m('λ':c)|(a,b)<-span(>'n')c=r(n 1 b#r a)%m(e b);m(c:r)=c:m r;m l=l;k="λ.";n=ta
 (1?f)x=z x;(5?f)x=e x%z x%z x;(i?f)x=(i&f$o m$f$head x):x;0&f=r.t;_&f=f;p=putStr
 d=getChar;(%)=(++);""#(_:r)=r%k;""#""=".";"."#r=r%k;"+"#(_:r)='.':r%k;"+"#_=".."
 "_"#('o':r)='O':r%k;x#l=x%l%"λ";q(x:_)=c x`mod`7;q _=0;r=reverse;z=n 1.r;a=print
-k!x@(s:_)=p"\^[cL"*>a k*>a(l x)*>p(unlines s);i="λ\n .#o_+";b="λ:wasd 🔄:x 🔙:u\n"
-l=length;w n=n`mod`8:w(n`div`8);y="儔翭䖿䤤䜣㛚㣛㢛䛃ᛃ㞛⛳瞛⛳砣✤季Ⱝॣ✬䥣✬孆✝䤣✄㛛ᛳ滛⛟盻⟛㛛⛛䬜⣥㘛⛃㣣✜潜⣯㛜ᣛ"
+k!x@(s:_)=p"\^[cL"*>a k*>a(l x)*>p(unlines s);i="\nλ .#o_+";b="λ:wasd 🔄:x 🔙:u\n"
+l=length;w n=n`mod`8:w(n`div`8);y="匔翭䖿䤤䜣㛚㣛㢛䛋ۋ㞛⛳瞛⛳硣✤季⡭ᥣ✬䥣✬孌✝䤣✌㛛ۣ滛⛟盻⟛㛛⛛䬜⣥㙛⛋㣣✜潜⣯㛜ࣛ"
 -- ^10 ------------------------------------------------------------------ 80> --
 {- gam-10-80-hs-prelude/call-by-push-block (cole-k), ghc 9.2.5
 
