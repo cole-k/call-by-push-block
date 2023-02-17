@@ -16,28 +16,57 @@ l=length;w n=n`mod`8:w(n`div`8);y="儔翭䖿䤤䜣㛚㣛㢛䛃ᛃ㞛⛳瞛⛳砣
 -- ^10 ------------------------------------------------------------------ 80> --
 {- gam-10-80-hs-prelude/call-by-push-block (cole-k), ghc 9.2.5
 
-   This program requires no additional arguments and can be run using `runghc`.
+   λ.o.o.o.o.o._.o.o.o.o.o.λ Call-by-push-block λ.o.o.o.o.o._.o.o.o.o.o.λ
+
+     Call-by-push-block is a sokoban game where you (the lambda `λ`) go code
+     golfing. Push a block (`o`) into every hole (`_`) to clear the level!
+
+     Your score is the number of moves you take. Like in real golf, a lower
+     score is better, but first make sure you can complete the level before you
+     try to get the best score.
+
+     There are 14 levels of increasing difficulty which will take around an hour
+     to complete, depending on experience. Your scores for each level are given
+     at the end: compete with your friends to see who can get the lowest scores!
+
+     Note before playing: You need to hit enter to submit your move (a quirk of
+       this entry being in the Prelude category). Read the "Controls in detail"
+       section if you're confused by the controls.
+
+   Running:
+     - This program requires no additional arguments and can be run using
+       `runghc`.
 
    The cast:
      - λ: The player character.
      - o: A block you can push.
-     - _: The switch you need to push a block into.
-     - And a couple others!
+     - _: The hole you need to push a block into.
+     - Joined by several others!
 
-   The controls:
+   Scoring:
+     - Your score is displayed beneath the level number, starting at 1.
+     - It increments for every move and undo you make and resets whenever you
+       reset the level.
+     - A lower score is better.
+
+   Controls in detail:
      Note that you need to press enter in order to make a move.
-     When prompted with ⮑
-     - Movement: [hjkl] (Vim-style movement: h=left, j=down, k=up, l=right)
-     - Redo: [x] (Reverts to the original state)
-
-   Notes on controls:
-     - You need to press enter in order to make a move.
-     - When prompted with ⮑, press enter to continue.
-     - Technically, all keys map to one of the above controls, so if you find
-       a set of keys you prefer, feel free to use them.
+     - Movement: [wasd]
+       - [w]: up [s]: down [a]: left [d]: right.
+     - Reset: [x]
+       - Resets the level. Also resets your score.
+     - Undo: [u]
+       - Undoes one move. This feature is added for convenience since moves must
+         be sent using the enter key (and thus it takes longer to get back where
+         you were if you make a mistake) and incurs a small score penalty.
+     - Additional notes
+        - You need to press enter in order to make a move.
+        - When prompted with ⮑, press enter to continue.
+        - Technically, all keys map to one of the above controls, so if you find
+        a set of keys you prefer, feel free to use them.
 
    Tips:
-     - Try everything! You can always redo if you make a mistake.
-     - The game will not redo for you if you enter an unwinnable state, you must
+     - Try everything! You can always reset or undo if you make a mistake.
+     - The game will not reset for you if you enter an unwinnable state, you must
        reset it manually.
 -}
