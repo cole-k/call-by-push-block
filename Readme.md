@@ -1,9 +1,21 @@
 # Call-by-push-block
 
-A game written in 10 lines of Haskell for the Feb '23 [Haskell Tiny Game Jam](https://github.com/haskell-game/tiny-games-hs). 
-It is for the Prelude category and as such does not use any imports.
+Call-by-push-block is a sokoban game written in 10 lines of Haskell for the Feb
+'23 [Haskell Tiny Game Jam](https://github.com/haskell-game/tiny-games-hs). It
+is for the Prelude category and so does not use any imports.
 
-## Quick run
+In Call-by-push-block, you are code golfing. To clear a level, you must move the
+lambda (`λ`) to push a block (`o`) into every hole (`_`).
+
+Your score is the number of moves you take. Like in real golf, a lower
+score is better, but make sure you can complete the level first before you
+try to get the best score.
+
+There are 14 levels of increasing difficulty. They will take around an hour
+to complete, depending on experience. Your scores for each level are given
+at the end: compete with your friends to see who can get the lowest scores!
+
+## Quick start
 
 Assuming you have Haskell installed, run this for the vanilla user experience
 
@@ -11,36 +23,57 @@ Assuming you have Haskell installed, run this for the vanilla user experience
 $ runghc call-by-push-block.hs
 ```
 
-And this for a nicer user experience (but not fitting the rules of the jam
-and its category)
+Run this version if you do not like having to press Enter after every move. Note
+that this version is provided for convenience and does not fit the rules and
+category of the game jam.
 
 ``` bash
-$ runghc call-by-push-block-more-playable.hs
+$ runghc call-by-push-block-no-buffering.hs
 ```
 
 See the [Running section](#running) for more details.
 
+## General advice
+
+  - You need to press Enter to submit your move (a quirk of this entry being in
+  the Prelude category).
+  - Try everything! You can always undo or reset if you reach an unsolvable
+  state.
+  - Read the [Controls in detail](#controls-in-detail) section if you're confused by the controls.
+
 ## The cast
+
   - `λ`: The player character.
   - `o`: A block you can push.
-  - `_`: The switch you need to push a block into.
-  - And a couple others!
+  - `_`: The hole you need to push a block into.
+  - Joined by several others!
+  
+## Scoring
 
-## The controls
-  Note that you need to press enter in order to make a move.
-  - Movement: [`hjkl`] (Vim-style movement: h=left, j=down, k=up, l=right)
-  - Redo: [`x`] (Reverts to the original state)
+  - Your score is displayed beneath the level number, starting at 1.
+  - It increments for every move and undo you make and resets whenever you
+  reset the level.
+  - A lower score is better.
 
-## Other notes on controls
-  - You need to press enter in order to make a move.
-  - When prompted with ⮑, press enter to continue.
-  - Technically, all keys map to one of the above controls, so if you find
-    a set of keys you prefer, feel free to use them.
+## Controls in detail
 
-## Tips
-  - Try everything! You can always redo if you make a mistake.
-  - The game will not redo for you if you enter an unwinnable state, you must
-    reset it manually.
+Note that you need to press Enter in order to make a move.
+  - Movement: <kbd>wasd</kdb>
+    - <kbd>w</kdb>: up
+    - <kbd>s</kdb>: down
+    - <kbd>a</kdb>: left
+    - <kbd>d</kdb>: right
+  - Reset: <kbd>x</kdb>
+    - Resets the level. Also resets your score.
+  - Undo: <kbd>u</kdb>
+    - Undoes one move. This feature is added for convenience since moves must
+      be sent using the Enter key (and thus it takes longer to get back where
+      you were if you make a mistake) and incurs a small score penalty.
+  - Additional notes
+     - When prompted with `⮑`, press Enter to continue.
+     - Technically, all keys map to one of the above controls. If you find that
+       your game is behaving in unexpected ways, you might be pressing keys
+       outside of the prescribed ones.
 
 ## Running
 
@@ -48,7 +81,7 @@ First, make sure that you have Haskell installed. I recommend using
 [GHCUp](https://www.haskell.org/ghcup/). This game is tested on GHC 9.2.5 but
 should run on most modern GHC versions.
 
-I highly recommend running `call-by-push-block-more-playable.hs` for a better
+I highly recommend running `call-by-push-block-no-buffering.hs` for a better
 experience, although it might be behind `call-by-push-block.hs` if I make any
 more changes since I probably won't update the two at the same time.
 
@@ -67,12 +100,14 @@ $ stack runghc call-by-push-block.hs
 ## File structure
 
 - `call-by-push-block.hs` is the submission to the game jam.
-- `call-by-push-block-more-playable.hs` is a version of `call-by-push-block.hs`
-  with some QoL improvements for playtesting (most notably its IO is unbuffered
-  which means that you do _not_ have to hit enter after each move).
+- `call-by-push-block-no-buffering.hs` is a version of `call-by-push-block.hs`
+  with unbuffered IO which means that you do _not_ have to hit Enter after each
+  move.
 - `call-by-push-block-ungolfed.hs` is a much earlier version that I wrote before
   golfing it. It has, however, diverged significantly from the golfed version.
-- `puzzle-scratch.txt` contains nicely-formatted versions of the levels since
-  it's much harder to visualize them if you write them in the format they're
-  stored. This contains some spoilers on the level content if you haven't played
-  the game.
+- `puzzle-scratch.txt` is where I have sketches of the levels (including some
+  alternate/initial versions and unused levels). This may contains spoilers on
+  the level content and solutions.
+- `encode-levels` contains code to compress the levels into Unicode characters.
+  This folder may contain spoilers on level content (particularly
+  `encode-levels/levels-raw.txt`).

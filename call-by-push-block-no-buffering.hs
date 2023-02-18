@@ -1,15 +1,24 @@
+import System.IO
 x="杙㫲㛃䚴ᕣۜ㞜孊㜕ᘳⳛ㮫櫓ㆫⵙ䤤㍲㋃䪵㓛⤤㋞坲㛆⋜㵛㚝㛡䦢㔴㜙㫑⛮㣛ᨛ㝭媛㝩媛涉᪶汭劶㍭㚛㛛创ⷝ癩㤆⛛等䢷㛛㣠ⶤ㋋㕬䜜㚿㛛䜓缣㛚⭣㉋ㆴ㛜㛛䛚㛛᚛㛣⛛䤤䣤"
-main=print=<<(mapM g.zip[1..].o(pure.words).lines$o(i!!).n 5.w=<<o c(x%y));o=map
+main=do
+     hSetBuffering stdin NoBuffering
+     print=<<(mapM g.zip[1..].o(pure.words).lines$o(i!!).n 5.w=<<o c(x%y))
+o=map
 t=foldr(zipWith(:))v;e=drop 1;g(k,x)|all(notElem '_')$head x=l x<$k!x<*p"⮑  "<*d
-g(k,x)=do{k!x;p b;i<-q<$>d;g(k,i?([t.r,t,id,t,t,t,o r]!!i)$x)};c=fromEnum;v=[]:v
+g(k,x)=do{k!x;p b;i<-q.pure<$>d;g(k,i?([t.r,t,id,t,t,t,o r]!!i)$x)};c=fromEnum;v=[]:v
 m('λ':c)|(a,b)<-span(>'n')c=r(n 1 b#r a)%m(e b);m(c:r)=c:m r;m l=l;k="λ.";n=take
 (1?f)x=z x;(5?f)x=e x%z x%z x;(i?f)x=(i&f$o m$f$head x):x;0&f=r.t;_&f=f;p=putStr
-d=getLine;(%)=(++);""#(_:r)=r%k;""#""=".";"."#r=r%k;"+"#(_:r)='.':r%k;"+"#_=".."
+d=getChar;(%)=(++);""#(_:r)=r%k;""#""=".";"."#r=r%k;"+"#(_:r)='.':r%k;"+"#_=".."
 "_"#('o':r)='O':r%k;x#l=x%l%"λ";q(x:_)=c x`mod`7;q _=0;r=reverse;z=n 1.r;a=print
 k!x@(s:_)=p"\^[cL"*>a k*>a(l x)*>p(unlines s);i="\nλ .#o_+";b="λ:wasd 🔄:x 🔙:u\n"
 l=length;w n=n`mod`8:w(n`div`8);y="匔翭䖿䤤䜣㛚㣛㢛䛋ۋ㞛⛳瞛⛳硣✤季⡭ᥣ✬䥣✬孌✝䤣✌㛛ۣ滛⛟盻⟛㛛⛛䬜⣥㙛⛋㣣✜潜⣯㛜ࣛ"
 -- ^10 ------------------------------------------------------------------ 80> --
-{- gam-10-80-hs-prelude/call-by-push-block (cole-k), ghc 9.2.5
+{- Unbuffered IO version of call-by-push-block (cole-k) ghc-9.2.5
+
+   !!! This is a modified version of the game call-by-push-block where IO is !!!
+   !!! set to NoBuffering so that you do not need to hit enter for every     !!!
+   !!! move you make. It is not the proper submission and only offered for   !!!
+   !!! convenience purposes.                                                 !!!
 
    λ.o.o.o.o.o._.o.o.o.o.o.λ Call-by-push-block λ.o.o.o.o.o._.o.o.o.o.o.λ
 
