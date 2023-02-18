@@ -11,7 +11,7 @@ l=length;w n=n`mod`8:w(n`div`8);y="匔翭䖿䤤䜣㛚㣛㢛䛋ۋ㞛⛳瞛⛳硣�
 -- ^10 ------------------------------------------------------------------ 80> --
 {- gam-10-80-hs-prelude/call-by-push-block (cole-k), ghc 9.2.5
 
-   λ.o.o.o.o.o._.o.o.o.o.o.λ Call-by-push-block λ.o.o.o.o.o._.o.o.o.o.o.λ
+     λ.o.o.o.o.o._.o.o.o.o.o.λ Call-by-push-block λ.o.o.o.o.o._.o.o.o.o.o.λ
 
      Call-by-push-block is a sokoban game where you go code golfing. To clear a
      level, you must move the lambda (`λ`) to push a block (`o`) into every hole
