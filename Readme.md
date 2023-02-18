@@ -17,7 +17,9 @@ at the end: compete with your friends to see who can get the lowest scores!
 
 ## Quick start
 
-Assuming you have Haskell installed, run this for the vanilla user experience
+### I have Haskell installed
+
+Run this for the vanilla user experience (`stack runghc` works too).
 
 ``` bash
 $ runghc call-by-push-block.hs
@@ -30,6 +32,22 @@ category of the game jam.
 ``` bash
 $ runghc call-by-push-block-no-buffering.hs
 ```
+
+### I don't want to install Haskell
+
+All credit for this solution goes to [Radon](https://github.com/raxod502) and
+[Radian](https://radian.codes/) for creating and hosting Riju.
+
+First, open up either `call-by-push-block.hs` or
+`call-by-push-block-no-buffering.hs` and copy the source code.
+
+Then, go to [https://riju.codes/haskell](https://riju.codes/haskell).
+
+Paste the code and hit Run.
+
+You'll be able to play the game in the terminal on the right side.
+
+### I want to install Haskell first or I want more details
 
 See the [Running section](#running) for more details.
 
