@@ -4,13 +4,13 @@ main=do
      hSetBuffering stdin NoBuffering
      print=<<(mapM g.zip[1..].o(pure.words).lines$o(i!!).n 5.w=<<o c(x%y))
 o=map
-t=foldr(zipWith(:))v;e=drop 1;g(k,x)|all(notElem '_')$head x=l x<$k!x<*p"⮑  "<*d
-g(k,x)=do{k!x;p b;i<-q.pure<$>d;g(k,i?([t.r,t,id,t,t,t,o r]!!i)$x)};c=fromEnum;v=[]:v
+g(k,x)|any(elem '_')$head x=do{k!x;p b;i<-q<$>d;g(k,i?([t.r,t,id,t,t,t,o r]!!i)$
+x)};g(k,x)=l x<$k!x<*p"⮑  "<*d;t=foldr(zipWith(:))v;z=n 1.r;b="λ:wasd 🔄:x 🔙:u\n"
 m('λ':c)|(a,b)<-span(>'n')c=r(n 1 b#r a)%m(e b);m(c:r)=c:m r;m l=l;k="λ.";n=take
 (1?f)x=z x;(5?f)x=e x%z x%z x;(i?f)x=(i&f$o m$f$head x):x;0&f=r.t;_&f=f;p=putStr
-d=getChar;(%)=(++);""#(_:r)=r%k;""#""=".";"."#r=r%k;"+"#(_:r)='.':r%k;"+"#_=".."
-"_"#('o':r)='O':r%k;x#l=x%l%"λ";q(x:_)=c x`mod`7;q _=0;r=reverse;z=n 1.r;a=print
-k!x@(s:_)=p"\^[cL"*>a k*>a(l x)*>p(unlines s);i="\nλ .#o_+";b="λ:wasd 🔄:x 🔙:u\n"
+d=getLine;(%)=(++);""#(_:r)=r%k;""#""=".";"."#r=r%k;"+"#(_:r)='.':r%k;"+"#_=".."
+"_"#('o':r)='O':r%k;x#l=x%l%"λ";q(x:_)=c x`mod`7;q _=0;a=print;v=[]:v;c=fromEnum
+k!x@(s:_)=p"\^[cLv "*>a k*>a(l x)*>p(unlines s);i="\nλ .#o_+";e=drop 1;r=reverse
 l=length;w n=n`mod`8:w(n`div`8);y="匔翭䖿䤤䜣㛚㣛㢛䛋ۋ㞛⛳瞛⛳硣✤季⡭ᥣ✬䥣✬孌✝䤣✌㛛ۣ滛⛟盻⟛㛛⛛䬜⣥㙛⛋㣣✜潜⣯㛜ࣛ"
 -- ^10 ------------------------------------------------------------------ 80> --
 {- Unbuffered IO version of call-by-push-block (cole-k) ghc-9.2.5
