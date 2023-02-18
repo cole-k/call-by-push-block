@@ -63,4 +63,12 @@ l=length;w n=n`mod`8:w(n`div`8);y="匔翭䖿䤤䜣㛚㣛㢛䛋ۋ㞛⛳瞛⛳硣�
         - When prompted with ⮑, press enter to continue.
         - Technically, all keys map to one of the above controls, so if you find
         a set of keys you prefer, feel free to use them.
+
+   Acknowledgements :
+     - Golfing: I've learned a bunch about code golfing in Haskell from various
+       tips and threads I've read from inumerably many people. I got some
+       explicit help from The Ninteenth Byte on Stack Exchange with shaving
+       characters off. Thank you!
+     - Testing and design: I solicited help from a bunch of people who
+       graciously lent me their time and feedback. Thank you!
 -}

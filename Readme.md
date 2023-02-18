@@ -17,11 +17,11 @@ at the end: compete with your friends to see who can get the lowest scores!
 
 ## General advice
 
-  - You need to press Enter to submit your move (a quirk of this entry being in
-  the Prelude category).
-  - Try everything! You can always undo or reset if you reach an unsolvable
-  state.
-  - Read the [Controls in detail](#controls-in-detail) section if you're confused by the controls.
+- You need to press Enter to submit your move (a quirk of this entry being in
+the Prelude category).
+- Try everything! You can always undo or reset if you reach an unsolvable
+state.
+- Read the [Controls in detail](#controls-in-detail) section if you're confused by the controls.
 
 ## Quick start
 
@@ -61,37 +61,37 @@ See the [Running section](#running) for more details.
 
 ## The cast
 
-  - `λ`: The player character.
-  - `o`: A block you can push.
-  - `_`: The hole you need to push a block into.
-  - Joined by several others!
+- `λ`: The player character.
+- `o`: A block you can push.
+- `_`: The hole you need to push a block into.
+- Joined by several others!
   
 ## Scoring
 
-  - Your score is displayed beneath the level number, starting at 1.
-  - It increments for every move and undo you make and resets whenever you
-  reset the level.
-  - A lower score is better.
+- Your score is displayed beneath the level number, starting at 1.
+- It increments for every move and undo you make and resets whenever you
+reset the level.
+- A lower score is better.
 
 ## Controls in detail
 
 Note that you need to press Enter in order to make a move.
-  - Movement: <kbd>wasd</kbd>
-    - <kbd>w</kbd>: up
-    - <kbd>s</kbd>: down
-    - <kbd>a</kbd>: left
-    - <kbd>d</kbd>: right
-  - Reset: <kbd>x</kbd>
-    - Resets the level. Also resets your score.
-  - Undo: <kbd>u</kbd>
-    - Undoes one move. This feature is added for convenience since moves must
-      be sent using the Enter key (and thus it takes longer to get back where
-      you were if you make a mistake) and incurs a small score penalty.
-  - Additional notes
-     - When prompted with `⮑`, press Enter to continue.
-     - Technically, all keys map to one of the above controls. If you find that
-       your game is behaving in unexpected ways, you might be pressing keys
-       outside of the prescribed ones.
+- Movement: <kbd>wasd</kbd>
+  - <kbd>w</kbd>: up
+  - <kbd>s</kbd>: down
+  - <kbd>a</kbd>: left
+  - <kbd>d</kbd>: right
+- Reset: <kbd>x</kbd>
+  - Resets the level. Also resets your score.
+- Undo: <kbd>u</kbd>
+  - Undoes one move. This feature is added for convenience since moves must
+    be sent using the Enter key (and thus it takes longer to get back where
+    you were if you make a mistake) and incurs a small score penalty.
+- Additional notes
+   - When prompted with `⮑`, press Enter to continue.
+   - Technically, all keys map to one of the above controls. If you find that
+     your game is behaving in unexpected ways, you might be pressing keys
+     outside of the prescribed ones.
 
 ## Running
 
@@ -129,3 +129,11 @@ $ stack runghc call-by-push-block.hs
 - `encode-levels` contains code to compress the levels into Unicode characters.
   This folder may contain spoilers on level content (particularly
   `encode-levels/levels-raw.txt`).
+  
+## Acknowledgements
+- Golfing: I've learned a bunch about code golfing in Haskell from various
+tips and threads I've read from inumerably many people. I got some
+explicit help from The Ninteenth Byte on Stack Exchange with shaving
+characters off. Thank you!
+- Testing and design: I solicited help from a bunch of people who
+graciously lent me their time and feedback. Thank you!
