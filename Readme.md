@@ -58,14 +58,14 @@ See the [Running section](#running) for more details.
 ## Controls in detail
 
 Note that you need to press Enter in order to make a move.
-  - Movement: <kbd>wasd</kdb>
-    - <kbd>w</kdb>: up
-    - <kbd>s</kdb>: down
-    - <kbd>a</kdb>: left
-    - <kbd>d</kdb>: right
-  - Reset: <kbd>x</kdb>
+  - Movement: <kbd>wasd</kbd>
+    - <kbd>w</kbd>: up
+    - <kbd>s</kbd>: down
+    - <kbd>a</kbd>: left
+    - <kbd>d</kbd>: right
+  - Reset: <kbd>x</kbd>
     - Resets the level. Also resets your score.
-  - Undo: <kbd>u</kdb>
+  - Undo: <kbd>u</kbd>
     - Undoes one move. This feature is added for convenience since moves must
       be sent using the Enter key (and thus it takes longer to get back where
       you were if you make a mistake) and incurs a small score penalty.
