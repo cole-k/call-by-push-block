@@ -15,6 +15,14 @@ There are 14 levels of increasing difficulty. They will take around an hour
 to complete, depending on experience. Your scores for each level are given
 at the end: compete with your friends to see who can get the lowest scores!
 
+## General advice
+
+  - You need to press Enter to submit your move (a quirk of this entry being in
+  the Prelude category).
+  - Try everything! You can always undo or reset if you reach an unsolvable
+  state.
+  - Read the [Controls in detail](#controls-in-detail) section if you're confused by the controls.
+
 ## Quick start
 
 ### I have Haskell installed
@@ -47,17 +55,9 @@ Paste the code and hit Run.
 
 You'll be able to play the game in the terminal on the right side.
 
-### I want to install Haskell first or I want more details
+### More details
 
 See the [Running section](#running) for more details.
-
-## General advice
-
-  - You need to press Enter to submit your move (a quirk of this entry being in
-  the Prelude category).
-  - Try everything! You can always undo or reset if you reach an unsolvable
-  state.
-  - Read the [Controls in detail](#controls-in-detail) section if you're confused by the controls.
 
 ## The cast
 
