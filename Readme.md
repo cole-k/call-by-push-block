@@ -88,7 +88,7 @@ Note that you need to press Enter in order to make a move.
     be sent using the Enter key (and thus it takes longer to get back where
     you were if you make a mistake) and incurs a small score penalty.
 - Additional notes
-   - When prompted with `⮑`, press Enter to continue.
+   - When prompted with `↩`, press Enter to continue.
    - Technically, all keys map to one of the above controls. If you find that
      your game is behaving in unexpected ways, you might be pressing keys
      outside of the prescribed ones.
