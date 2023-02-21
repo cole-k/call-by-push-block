@@ -4,10 +4,10 @@ v(x:_)=c x`mod`7;v _=0;l=print;s=[]:s;c=fromEnum;i="\nλ .#o_+";y=drop 1;(%)=(++
 e&0=u.t;f&_=f;p=putStr;(1?f)x=z x;(5?f)x=y x%z x%z x;(i?f)x=(f&i$r e$f$head x):x
 r=map;main=print=<<(mapM g.zip[1..].r(pure.words).lines$r(i!!).m 5.w=<<r c(n%x))
 g(k,o)|any(elem '_')$head o=do{k!o;p b;i<-v<$>d;g(k,i?([t.u,t,id,t,t,t,r u]!!i)$
-o)};g(k,x)=a x<$k!x<*p"⮑  "<*d;t=foldr(zipWith(:))s;z=m 1.u;b="λ:wasd 🔄:x 🔙:u\n"
+o)};g(k,x)=a x<$k!x<*p"↩"<*d;t=foldr(zipWith(:))s;z=m 1.u;w n=n`mod`8:w(n`div`8)
 n!x@(s:_)=p"\^[cLvl "*>l n*>l(a x)*>p(unlines s);d=getLine;(_:r)#""=r%k;_#""="."
 n#"."=n%k;(_:r)#"+"='.':r%k;_#"+"="..";('o':r)#"_"='O':r%k;l#x=x%l%"λ";u=reverse
-a=length;w n=n`mod`8:w(n`div`8);x="匔翭䖿䤤䜣㛚㣛㢛䛋ۋ㞛⛳瞛⛳硣✤季⡭ᥣ✬䥣✬孌✝䤣✌㛛ۣ滛⛟盻⟛㛛⛛䬜⣥㙛⛋㣣✜潜⣯㛜ࣛ"
+a=length;b="λ:wasd 🔄:x 🔙:u\n";x="匔翭䖿䤤䜣㛚㣛㢛䛋ۋ㞛⛳瞛⛳硣✤季⡭ᥣ✬䥣✬孌✝䤣✌㛛ۣ滛⛟盻⟛㛛⛛䬜⣥㙛⛋㣣✜潜⣯㛜ࣛ"
 -- ^10 ------------------------------------------------------------------ 80> --
 {- gam-10-80-hs-prelude/call-by-push-block (cole-k), ghc 9.2.5
 
