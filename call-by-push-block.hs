@@ -1,8 +1,9 @@
-n="噞㋪㛃䚬摣ۜ㝜ቲ㜑昫⫛㍋勓ㅋ⩞䤤㱪㳃䊩㓛⤤㳝ᙪ㛅Ⳝ㩛㚙㛦䥢㔬㜞㋖⛍㣛戛㙉ኛ㙎ኛ孶抭安Ჭ㱉㚛㛛ᰛ⯙瞎㤅⛛牶䢯㛛㣠⭤㳳㑌䜜㚿㛛䜓缣㛚≣㶳ㅬ㛜㛛䛚㛛暛㛣⛛䤤䣤"
+-- n="噞㋪㛃䚬摣ۜ㝜ቲ㜑昫⫛㍋勓ㅋ⩞䤤㱪㳃䊩㓛⤤㳝ᙪ㛅Ⳝ㩛㚙㛦䥢㔬㜞㋖⛍㣛戛㙉ኛ㙎ኛ孶抭安Ჭ㱉㚛㛛ᰛ⯙瞎㤅⛛牶䢯㛛㣠⭤㳳㑌䜜㚿㛛䜓缣㛚≣㶳ㅬ㛜㛛䛚㛛暛㛣⛛䤤䣤"
+n="###......... #λ.._....o.. ##λ.#.###... #.λλ#.#.#._. .λ..λ.....o."
 e('λ':c)|(a,b)<-span(>'n')c=u(u a#m 1 b)%e(y b);e(c:d)=c:e d;e l=l;k="λ.";m=take
 v(x:_)=c x`mod`7;v _=0;l=print;s=[]:s;c=fromEnum;i="\no .#_λ+";y=drop 1;x%y=x<>y
 e&0=u.t;f&_=f;p=putStr;1?f=z;5?f=y%z%z;i?f=(h.(f&i).r e.f.head)%id;h=pure;
-r=map;main=print=<<(mapM g.zip[1..].r(h.words).lines$r(i!!).m 5.w=<<r c(n%x))
+r=map;main=print=<<(mapM g.zip[1..].r(h.words).lines$n) -- $r(i!!).m 5.w=<<r c(n%x))
 g(k,o)|any(elem '_')$head o=do{k!o;p b;i<-v<$>d;g(k,i?([t.u,t,id,t,t,t,r u]!!i)$
 o)};g(k,x)=a x<$k!x<*p"↩"<*d;t=foldr(zipWith(:))s;z=m 1.u;w n=n`mod`8:w(n`div`8)
 n!x@(s:_)=p"\^[cLvl "*>l n*>l(a x)*>p(unlines s);d=getLine;(_:r)#""=r%k;_#""="."

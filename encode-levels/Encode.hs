@@ -3,7 +3,7 @@ module Encode where
 import Data.ByteString (ByteString)
 import qualified Data.ByteString as B
 import Data.List (elemIndex, nub, permutations, sortOn, sort, tails, maximumBy)
-import Data.Maybe (fromJust)
+import Data.Maybe (fromJust, catMaybes)
 import Data.Set (Set)
 import qualified Data.Set as S
 import Data.Trie (Trie)
@@ -147,10 +147,14 @@ findEncodingDiffTree n chars
   where
     diffTrie = createDiffTrie (1 + (length chars `div` n)) (diffs $ map fromEnum printableUnicodes)
 
-tryEncodeNaive :: Int -> [Char] -> [Char] -> ((Int, [Char], [Char]), [Int])
-tryEncodeNaive n encodingChars charsToEncode = ((n, encodingChars, map toEnum encoding), missingNums)
+tryEncodeNaive :: Int -> [Char] -> [Char] -> Maybe ((Int, [Char], [Char]), [Int])
+tryEncodeNaive n encodingChars charsToEncode =
+  if invalidEncoding
+     then Nothing
+     else Just ((n, encodingChars, map toEnum encoding), missingNums)
   where
     encoding = encodeInChunksOf n encodingChars charsToEncode
+    invalidEncoding = any (>(2^20)) encoding
     missingNums = filter (not . isPrint . toEnum) encoding
 
 data OutputType
@@ -160,7 +164,7 @@ data OutputType
 
 findEncodingNaive :: Int -> [Char] -> OutputType -> [((Int, [Char], [Char]), [Int])]
 findEncodingNaive n chars outputType
-  = selector outputType . sortOn (length . snd) $ map (\ecs -> tryEncodeNaive n ecs chars) (permutations encodingChars)
+  = selector outputType . sortOn (length . snd) . catMaybes $ map (\ecs -> tryEncodeNaive n ecs chars) (permutations encodingChars)
   where
     selector NoMissing = takeWhile (\(_, missing) -> null missing)
     selector (First n) = take n
@@ -194,4 +198,4 @@ main = do
   let n = read nStr
   chars <- readFile file
   -- validChars <- readCharacterList "ghc-unicode-chars.txt"
-  mapM_ printEncodingNaive $ findEncodingNaive n chars NoMissing
+  mapM_ printEncodingNaive $ findEncodingNaive n chars (First 100)
