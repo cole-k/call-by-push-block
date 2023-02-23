@@ -71,4 +71,6 @@ a=length;b="λ:wasd 🔄:x 🔙:u\n";x="ᴔ翉䕿䤤䜣㛚㣛㢛䛳۳四⛛竛�
         - When prompted with ⮑, press enter to continue.
         - Technically, all keys map to one of the above controls, so if you find
         a set of keys you prefer, feel free to use them.
+     - The jam and feedback: #haskell-game and the organizers of The Haskell Tiny
+       Game Jam. Thank you!
 -}

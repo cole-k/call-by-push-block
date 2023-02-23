@@ -72,4 +72,6 @@ a=length;b="λ:wasd 🔄:x 🔙:u\n";x="ᴔ翉䕿䤤䜣㛚㣛㢛䛳۳四⛛竛�
        characters off. Thank you!
      - Testing and design: I solicited help from a bunch of people who
        graciously lent me their time and feedback. Thank you!
+     - The jam and feedback: #haskell-game and the organizers of The Haskell Tiny
+       Game Jam. Thank you!
 -}

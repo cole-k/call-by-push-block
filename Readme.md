@@ -137,3 +137,5 @@ explicit help from The Ninteenth Byte on Stack Exchange with shaving
 characters off. Thank you!
 - Testing and design: I solicited help from a bunch of people who
 graciously lent me their time and feedback. Thank you!
+- The jam and feedback: #haskell-game and the organizers of The Haskell Tiny
+  Game Jam. Thank you!
