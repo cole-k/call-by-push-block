@@ -199,15 +199,30 @@ Level end 1
 
 minified:
 
-Level end 2
+Level end 2 (currently used)
+
+###........
+#λ.._.o.o..
+##λ.#.###..
+#.λλ#.#.#_.
+.λ..λ......
+
+
+minified: ###........ #λ.._.o.o.. ##λ.#.###.. #.λλ#.#.#_. .λ..λ......
+
+Level end 3 (fits in 1 remaining char)
+(2 chars flex remaining from Level 14 alt)
+(2 chars flex remaining from "Lvl")
 
 ###.........
-#λ.o_.o.o...
-##λ.#.###...
-#.λλ#.#.#._.
-.λ._λ.......
+#.λ_....λ...
+##.o.###.λo.
+#λλ#.#.#.λλ.
+#..#.#.#λ_.λ
 
-minified: ###......... #λ.._....o.. ##λ.#.###... #.λλ#.#.#._. .λ..λ.....o.
+minified: ###......... #.λ_....λ... ##.o.###.λo. #λλ#.#.#.λλ. #..#.#.#λ_.λ
+
+minified:
 
 Level end Alt
 λλλ..........
