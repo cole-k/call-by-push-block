@@ -2,16 +2,6 @@
 char set: λ_.o+# \n
 additional chars: O
 
-remaining characters: 0
-  - +9 (without alts)
-  - +10 (level 14 alt)
-(fits level 1 and level 2 alt)
-  - -13 (replace level 7 with level 7 alt)
-  - -3 (replace level 2 with level 2 alt)
-  - Not sure the below is a good idea
-  - +1 (combine levels 9 and 10)
-  - -4 (add spaces in the middle of levels 9 and 10 combined)
-
 Level 1
 λ.o._
 _.o..
@@ -199,7 +189,7 @@ Level end 1
 
 minified:
 
-Level end 2 (currently used)
+Level end 2
 
 ###........
 #λ.._.o.o..
@@ -210,11 +200,7 @@ Level end 2 (currently used)
 
 minified: ###........ #λ.._.o.o.. ##λ.#.###.. #.λλ#.#.#_. .λ..λ......
 
-Level end 3 (fits in 1 remaining char)
-(2 chars flex remaining from Level 14 alt)
-(2 chars flex remaining from "Lvl")
-(-1 chars unused)
-likely solution: go back to level 14 alt
+Level end 3 (fits currently)
 
 ###.........
 #.λ_....λ...
@@ -224,7 +210,25 @@ likely solution: go back to level 14 alt
 
 minified: ###......... #.λ_....λ... ##.o.###.λo. #λλ#.#.#.λλ. #..#.#.#λ_.λ
 
-minified:
+Level end 4 (fits currently)
+
+###.........
+#.._....λ...
+##.o.###.λo.
+#.λ#.#.#.λλ.
+#..#λ#.#λ_.λ
+
+minified: ###......... #.._....λ... ##.o.###.λo. #.λ#.#.#.λλ. #..#λ#.#λ_.λ
+
+Level end 5 (harder)
+
+###.........
+#.λ_....λ...
+##.o.###.λo.
+#..#.#.#.λλ.
+#..#.#.#λ_.λ
+
+minified: ###......... #.λ_....λ... ##.o.###.λo. #..#.#.#.λλ. #..#.#.#λ_.λ
 
 Level end Alt
 λλλ..........
