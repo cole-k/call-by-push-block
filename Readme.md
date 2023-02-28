@@ -124,7 +124,7 @@ are completely stuck on a level, there is a level skip code at the end.
     are conditions where pushing a player character off the grid is necessary.
     Remember: you only need to push a block into each hole.</details>
   - <details><summary>Spoiler</summary>The order you try things in often
-    matters. Sometimes you may have the right idea, but wrong execution
+    matters. Sometimes you may have the right idea but wrong execution
     order.</details>
   - <details><summary>Spoiler</summary>Reset or undo early if you realize you
     are in an unwinnable state. A quick trick to determine whether you are in

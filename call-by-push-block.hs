@@ -89,7 +89,7 @@ a=[]:a;u=reverse;x=n%"ᅕ䤉喤孭坫㛚㫛㪛囃盃㞛⛳䞛⛳䨫❭ቫ⨉੫�
          cynlre punenpgre bss gur tevq vf arprffnel. Erzrzore: lbh bayl arrq gb
          chfu n oybpx vagb rnpu ubyr.
        - Gur beqre lbh gel guvatf va bsgra znggref. Fbzrgvzrf lbh znl unir gur
-         evtug vqrn, ohg jebat rkrphgvba beqre.
+         evtug vqrn ohg jebat rkrphgvba beqre.
        - Erfrg be haqb rneyl vs lbh ernyvmr lbh ner va na hajvaanoyr fgngr. N
          dhvpx gevpx gb qrgrezvar jurgure lbh ner va bar vf gb pbhag gur ahzore
          bs erznvavat ubyrf naq purpx vs gurer vf n oybpx gung pna or chfurq
