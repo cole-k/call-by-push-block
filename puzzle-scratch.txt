@@ -2,16 +2,6 @@
 char set: λ_.o+# \n
 additional chars: O
 
-remaining characters: 0
-  - +9 (without alts)
-  - +10 (level 14 alt)
-(fits level 1 and level 2 alt)
-  - -13 (replace level 7 with level 7 alt)
-  - -3 (replace level 2 with level 2 alt)
-  - Not sure the below is a good idea
-  - +1 (combine levels 9 and 10)
-  - -4 (add spaces in the middle of levels 9 and 10 combined)
-
 Level 1
 λ.o._
 _.o..
@@ -189,6 +179,66 @@ Level 15
 
 minified: ...+_+... .+..+..+. ......... #.#o#o#.# ..λ...λ.. .#.#.#.#. #.o+_+o.# #.......#
 
+Level end 1
+
+###..........
+#..._.λ..o...
+##..#.#λ##...
+#...#.#λλ#._.
+......λ..λo..
+
+minified:
+
+Level end 2
+
+###........
+#λ.._.o.o..
+##λ.#.###..
+#.λλ#.#.#_.
+.λ..λ......
+
+
+minified: ###........ #λ.._.o.o.. ##λ.#.###.. #.λλ#.#.#_. .λ..λ......
+
+Level end 3 (fits currently)
+
+###.........
+#.λ_....λ...
+##.o.###.λo.
+#λλ#.#.#.λλ.
+#..#.#.#λ_.λ
+
+minified: ###......... #.λ_....λ... ##.o.###.λo. #λλ#.#.#.λλ. #..#.#.#λ_.λ
+
+Level end 4 (fits currently)
+
+###.........
+#.._....λ...
+##.o.###.λo.
+#.λ#.#.#.λλ.
+#..#λ#.#λ_.λ
+
+minified: ###......... #.._....λ... ##.o.###.λo. #.λ#.#.#.λλ. #..#λ#.#λ_.λ
+
+Level end 5 (harder)
+
+###.........
+#.λ_....λ...
+##.o.###.λo.
+#..#.#.#.λλ.
+#..#.#.#λ_.λ
+
+minified: ###......... #.λ_....λ... ##.o.###.λo. #..#.#.#.λλ. #..#.#.#λ_.λ
+
+Level end Alt
+λλλ..........
+λ...o........
+λλ....λλλλ...
+λ...λ.λ..λ...
+λ._.λ_λ..λ.o.
+
+minified: λλλ.......... λ...o........ λλ....λλλλ... λ...λ.λ..λ... λ._.λ_λ..λ.o.
+
 Level ?
 .λ.λ.λ...
 #.#.#.#.#
@@ -212,6 +262,33 @@ Level ?
 .__....#_
 
 minified: ++λ+__o.λ +..+o+#.. ..oooooo. ._o....#_
+
+Level 1 Alt
+#######
+#λ.o._#
+#_.o..#
+#######
+
+Level 1 Alt 2
+.......
+.λ.o._.
+._.o...
+.......
+
+Level 2 Alt
+...#_
+.#.#o
+λ#...
+
+minified: ...#_ .#.#o λ#...
+
+Level 5 Alt
+(-3 chars)
+.λo_
+####
+_oλ.
+
+minified: .λo_ #### _oλ.
 
 Level 7 Alt
 
@@ -239,21 +316,19 @@ minified: .λ.#..λ ..o_... ...#.o. #_###_# .λ.#... .o._o.λ ...#...
 
 -- ...#..λ .o._.o. .λ.#... #_###_# ..λ#..λ .o._o.. ...#...
 
-Level 1 Alt
-#######
-#λ.o._#
-#_.o..#
-#######
+Level 9-10 combined Alt
+(-2 chars)
 
-Level 1 Alt 2
-.......
-.λ.o._.
-._.o...
-.......
+λoo+_
+λoλ+_
 
-Level 2 Alt
-...#_
-.#.#o
-λ#...
+minified: λoo+_ λoλ+_
 
-minified: ...#_ .#.#o λ#...
+Level 9-10 combined Alt 2
+(+13 chars)
+
+...λoo+_
+########
+_+λoλ...
+
+minified: ...λoo+_ ######## _+λoλ...
