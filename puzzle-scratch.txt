@@ -259,6 +259,33 @@ Level ?
 
 minified: ++λ+__o.λ +..+o+#.. ..oooooo. ._o....#_
 
+Level 1 Alt
+#######
+#λ.o._#
+#_.o..#
+#######
+
+Level 1 Alt 2
+.......
+.λ.o._.
+._.o...
+.......
+
+Level 2 Alt
+...#_
+.#.#o
+λ#...
+
+minified: ...#_ .#.#o λ#...
+
+Level 5 Alt
+(-3 chars)
+.λo_
+####
+_oλ.
+
+minified: .λo_ #### _oλ.
+
 Level 7 Alt
 
 ...#..λ
@@ -285,21 +312,19 @@ minified: .λ.#..λ ..o_... ...#.o. #_###_# .λ.#... .o._o.λ ...#...
 
 -- ...#..λ .o._.o. .λ.#... #_###_# ..λ#..λ .o._o.. ...#...
 
-Level 1 Alt
-#######
-#λ.o._#
-#_.o..#
-#######
+Level 9-10 combined Alt
+(-2 chars)
 
-Level 1 Alt 2
-.......
-.λ.o._.
-._.o...
-.......
+λoo+_
+λoλ+_
 
-Level 2 Alt
-...#_
-.#.#o
-λ#...
+minified: λoo+_ λoλ+_
 
-minified: ...#_ .#.#o λ#...
+Level 9-10 combined Alt 2
+(+13 chars)
+
+...λoo+_
+########
+_+λoλ...
+
+minified: ...λoo+_ ######## _+λoλ...
